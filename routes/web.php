@@ -16,11 +16,19 @@
 // });
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/detail/{slug}', 'ProductController@index')->name('detail');
+// Route::get('/detail/{slug}', 'ProductController@index')->name('detail');
 // Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('dashboard');
+Route::prefix('product')
+    ->group(function () {
+        Route::get('/', 'ProductController@index')
+            ->name('products');
+        Route::get('/detail/{slug}', 'ProductController@detail')
+            ->name('detail');
+    });
+
 Route::prefix('admin')
     ->namespace('Admin')
-    // ->middleware(['auth', 'admin'])
+    ->middleware(['auth', 'admin'])
     ->group(function () {
         Route::get('/', 'DashboardController@index')
             ->name('dashboard');
@@ -29,3 +37,4 @@ Route::prefix('admin')
         Route::resource('gallery', 'GalleryController');
         Route::resource('transaction', 'TransactionController');
     });
+Auth::routes(['verify' => true]);

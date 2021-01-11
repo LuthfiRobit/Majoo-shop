@@ -9,8 +9,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navb">
             <ul class="navbar-nav ml-auto mr-3">
-                <li class="nav-item mx-md-2"><a href="#" class="nav-link active">Home</a></li>
-                <li class="nav-item mx-md-2"><a href="#" class="nav-link">Products</a></li>
+                <li class="nav-item mx-md-2"><a href="{{route('home')}}" class="nav-link active">Home</a></li>
+                <li class="nav-item mx-md-2"><a href="{{route('products')}}" class="nav-link">Products</a></li>
             </ul>
             @guest
             <!-- Mobile Button -->

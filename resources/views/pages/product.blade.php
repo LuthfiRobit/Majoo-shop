@@ -5,28 +5,12 @@ Majoo
 @endsection
 
 @section('content')
-<!-- Header -->
-<header class="text-center">
-    <h1>Find Best Product Here
-    </h1>
-    @auth
-        
-    @endauth
-    @guest
-    <p class="mt-3">
-        Do You Have Account?
-    </p>
-    <a href="#popular" class="btn btn-get-started px-4">
-        Get Started and Register Now!
-    </a>
-    @endguest
-</header>
-<main>
+<main class="mt-0">
     <section class="section-popular" id="popular">
         <div class="container">
             <div class="row">
                 <div class="col text-center section-popular-heading">
-                    <h2>Popular Products</h2>
+                    <h2>New Products</h2>
                 </div>
             </div>
         </div>

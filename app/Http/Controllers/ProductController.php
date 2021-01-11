@@ -8,14 +8,15 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
-    // public function detail($slug)
-    // {
-    //     $data['title'] = "Products";
-    //     $data['product'] = Product::whereSlug($slug)->first();
-    //     return view('web/product_detail', $data);
-    // }
+    public function index()
+    {
+        $items = Product::orderBy('created_at', 'DESC')->get();
+        return view('pages.product',[
+            'items' => $items
+        ]);
+    }
 
-    public function index(Request $request, $slug)
+    public function detail(Request $request, $slug)
     {
         $item = Product::where('slug',$slug)
                 ->firstOrFail();
