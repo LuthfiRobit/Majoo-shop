@@ -11,4 +11,20 @@
 |
 */
 
-Route::get('/', 'Admin\DashboardController@index');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'User\HomeController@index')->name('home');
+// Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('dashboard');
+Route::prefix('admin')
+    ->namespace('Admin')
+    // ->middleware(['auth', 'admin'])
+    ->group(function () {
+        Route::get('/', 'DashboardController@index')
+            ->name('dashboard');
+
+        Route::resource('product', 'ProductController');
+        Route::resource('gallery', 'GalleryController');
+        Route::resource('transaction', 'TransactionController');
+    });
