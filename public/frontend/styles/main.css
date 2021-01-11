@@ -113,18 +113,22 @@ header .btn-get-started {
   background-color: #ddd;
   color: #fff;
   padding: 30px;
-  background-size: cover;
+  background-size:unset;
   margin-bottom: 20px;
 }
 
 .section-popular-content .section-popular-travel .travel-country {
-  font-size: 18px;
-  color: #fff;
+  font-size: 20px;
+  color: #071c4c;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .section-popular-content .section-popular-travel .travel-location {
-  font-size: 26px;
-  color: #fff;
+  font-size: 18px;
+  color: #051334;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .section-popular-content .section-popular-travel .travel-button .btn-travel-details {

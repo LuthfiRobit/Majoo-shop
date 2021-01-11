@@ -24,12 +24,12 @@ Majoo
     <section class="section-popular-content" id="popularContent">
         <div class="container">
             <div class="section-popular-travel row justify-content-center">
-                {{-- @foreach ($items as $item)
+                @foreach ($items as $item)
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card-travel text-center d-flex flex-column"
-                        style="background-image: url('{{$item->galleries->count() ? Storage::url($item->galleries->first()->image) : 'not found' }}');">
-                        <div class="travel-country">{{$item->title}}</div>
-                        <div class="travel-location">{{$item->location}}</div>
+                        style="background-image: url('{{ asset('assets/admin/product_images/'.$item->image) }}">
+                        <div class="travel-country mb-1">{{$item->product_name}}</div>
+                        <div class="travel-location">Rp. {{$item->price}},00/P</div>
                         <div class="travel-button mt-auto">
                             <a href="{{route('detail',$item->slug)}}" class="btn btn-travel-details px-4">
                                 View Details
@@ -37,9 +37,9 @@ Majoo
                         </div>
                     </div>
                 </div>
-                @endforeach --}}
+                @endforeach
                 
-                <div class="col-sm-6 col-md-4 col-lg-3">
+                {{-- <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card-travel text-center d-flex flex-column"
                         style="background-image: url('frontend/images/travel_2.jpg');">
                         <div class="travel-country">INDONESIA</div>
@@ -74,7 +74,7 @@ Majoo
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

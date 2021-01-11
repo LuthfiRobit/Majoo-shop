@@ -15,7 +15,8 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'User\HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/detail/{slug}', 'ProductController@index')->name('detail');
 // Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('dashboard');
 Route::prefix('admin')
     ->namespace('Admin')
