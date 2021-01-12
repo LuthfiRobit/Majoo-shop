@@ -11,12 +11,13 @@
     -  DB_USERNAME=root
     -  DB_PASSWORD=
 5. Email Verification di .env (bisa menggunakan akun mailtrap pribadi)
-   -  MAIL_MAILER=smtp
-   -  MAIL_HOST=smtp.mailtrap.io
-   -  MAIL_PORT=2525
-   -  MAIL_USERNAME=f4be48b0d3485c
-   -  MAIL_PASSWORD=41a7a3977db118
-   -  MAIL_ENCRYPTION=tls
+- MAIL_MAILER=smtp
+- MAIL_HOST=smtp.mailtrap.io
+- MAIL_PORT=2525
+- MAIL_USERNAME=443957436fe9d8
+- MAIL_PASSWORD=fed0313ba03b00
+- MAIL_ENCRYPTION=tls
+
 6. Menjalankan php artisan key:generate
 7. Menjalankan php artisan migrate membuat tabel pada database
 8. Menjalankan php artisan db:seed mengisi data users dan products pada database
