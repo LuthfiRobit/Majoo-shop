@@ -52,7 +52,13 @@
                     </div>
                     <div class="join-container">
                         @auth
-                            <form action="" method="POST">
+                            <form action="{{ URL::to('cart') }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="stock" width="50%">Stok</label>
+                                    <input type="number" width="50%" class="form-control" size="4" id="qty" name="qty" value="1" min="1" step="1"value="{{old('stock')}}">
+                                </div>
+                                <input type="hidden" value="{{ $item->id }}" name="product_id"/>
                                 <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">
                                     Add to Chart
                                 </button>

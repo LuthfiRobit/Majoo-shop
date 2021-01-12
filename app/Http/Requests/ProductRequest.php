@@ -12,13 +12,10 @@ class ProductRequest extends FormRequest
     //  *
     //  * @return bool
     //  */
-    // public function authorize()
-    // {
-    //     // if (Auth::guard('admin')->check()) {
-    //     //     return true;
-    //     // }
-    //     return false;
-    // }
+    public function authorize()
+    {
+        return true;
+    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -41,12 +38,5 @@ class ProductRequest extends FormRequest
         }
 
         return $rule;
-        // return[
-        //     'price' => ['required', 'numeric'],
-        //     'about' => ['required'],
-        //     'stock' => ['required', 'numeric'],
-        //     'price' => ['required', 'numeric'],
-        //     'image' => ['required','image']
-        // ];
     }
 }

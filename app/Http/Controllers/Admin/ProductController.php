@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Services\ProductService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use File;
 
 class ProductController extends Controller
 {
@@ -103,6 +104,7 @@ class ProductController extends Controller
     {
         try {
             $product = Product::findOrFail($id);
+            File::delete('assets/admin/product_images/' . $product->image);
             if ($product->delete()) {
                 return redirect()->back();
             }

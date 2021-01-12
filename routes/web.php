@@ -37,4 +37,13 @@ Route::prefix('admin')
         Route::resource('gallery', 'GalleryController');
         Route::resource('transaction', 'TransactionController');
     });
+
+Route::prefix('cart')
+    ->middleware(['auth', 'admin'])
+    ->group(function () {
+        Route::get('/', 'CartController@index')->name('cart');
+        Route::post('/', 'CartController@store');
+        Route::get('/delete/{id}', 'CartController@delete');
+        // Route::post('/change_qty', 'CartController@change_qty');
+    });
 Auth::routes(['verify' => true]);

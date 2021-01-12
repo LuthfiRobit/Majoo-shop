@@ -18,7 +18,7 @@
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="{{route('product.update', $item->id)}}" method="POST">
+            <form action="{{route('product.update', $item->id)}}" enctype="multipart/form-data"  method="POST">
                 @method('PUT')
                 @csrf
                 <div class="form-group">
@@ -42,7 +42,7 @@
                 <div class="row form-group">
                     <div class="col col-md-3">
                         <label for="file-input" class=" form-control-label">Product Picture *</label>
-                        <img src="{{ asset('assets/admin/product_images/'.$item->image) }}" style="width: 100px">
+                        {{-- <img src="{{ asset('assets/admin/product_images/'.$item->image) }}" style="width: 100px"> --}}
                         <small>Current Picture</small>
                     </div>
                     <div class="col-12 col-md-9">

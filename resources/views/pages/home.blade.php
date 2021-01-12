@@ -16,7 +16,7 @@ Majoo
     <p class="mt-3">
         Do You Have Account?
     </p>
-    <a href="#popular" class="btn btn-get-started px-4">
+    <a href="{{route('register')}}" class="btn btn-get-started px-4">
         Get Started and Register Now!
     </a>
     @endguest
